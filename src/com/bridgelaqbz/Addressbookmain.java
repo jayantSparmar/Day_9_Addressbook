@@ -3,7 +3,6 @@ package com.bridgelaqbz;
 public class Addressbookmain {
     public static void main(String[] args) {
         System.out.println("welcome to the address book program");
-
         //Variable for user Choice
         int choice;
 
@@ -28,6 +27,8 @@ public class Addressbookmain {
                     addressBook.editContact();
                     break;
                 case 3:
+                    //Delete the Contact Details
+                    addressBook.deleteContact();
                     break;
                 case 4:
                     //Show Contact Details
@@ -43,4 +44,5 @@ public class Addressbookmain {
         }while( choice != 5 );
     }
 }
+
 
