@@ -5,7 +5,6 @@ import java.util.Scanner;
 
 public class AddressBook {
 
-
     //Scanner object for User Input
     Scanner sc = new Scanner(System.in);
     int choice;
