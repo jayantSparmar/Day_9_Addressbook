@@ -12,7 +12,7 @@ public class AddressBookRepo {
     public static void addNewAddressBook() {
         System.out.println("Enter the Address Book Name :");
         String addressbookName = sc.next();
-        if(checkAddressBook(addressbookName)) {
+        if(addressBookMap.containsKey(addressbookName)) {
             System.out.println("Entered AddressBook is Already Available");
         } else {
             AddressBook addressBook = new AddressBook();
@@ -26,20 +26,11 @@ public class AddressBookRepo {
         }
     }
 
-    public static boolean checkAddressBook(String addressbookName) {
-        for(String key: addressBookMap.keySet()){
-            if(addressbookName.equalsIgnoreCase(key)) {
-                return true;
-            }
-        }
-        return false;
-    }
-
     public static void selectAddressBook() {
         displayAddressBooks();
         System.out.println("Enter the Address Book Name :");
         String addressbookName = sc.next();
-        if(checkAddressBook(addressbookName)) {
+        if(addressBookMap.containsKey(addressbookName)) {
             addressBookMap.get(addressbookName).contactOptions(addressBookMap.get(addressbookName));
         } else {
             System.out.println("Entered Address Book Name is Invalid");
@@ -50,7 +41,7 @@ public class AddressBookRepo {
         displayAddressBooks();
         System.out.println("Enter the Address Book Name :");
         String addressbookName = sc.next();
-        if(checkAddressBook(addressbookName)) {
+        if(addressBookMap.containsKey(addressbookName)) {
 //            System.out.println("Enter the New Name for Addressbook :");
 //            String newName = sc.next();
 //            addressBookMap.;
@@ -63,7 +54,7 @@ public class AddressBookRepo {
         displayAddressBooks();
         System.out.println("Enter the Address Book Name :");
         String addressbookName = sc.next();
-        if(checkAddressBook(addressbookName)) {
+        if(addressBookMap.containsKey(addressbookName)) {
             addressBookMap.remove(addressbookName);
             System.out.println("Address Book is Deleted");
         } else {
